@@ -10,6 +10,12 @@ namespace PrimeNumbers
             GetPrime(in_val > 0 ? in_val : 10001);
         }
 
+        /// <summary>
+        /// This function parses any passed in arguments
+        /// this application only accepts one arg
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns>int</returns>
         private static int ParseArgs(string[] args)
         {
             int arg1;
@@ -21,6 +27,10 @@ namespace PrimeNumbers
             return 0;
         }
 
+        /// <summary>
+        /// This starts the work of getting the desired prime number
+        /// </summary>
+        /// <param name="which_one"></param>
         private static void GetPrime(int which_one)
         {
             int num = 2, how_many_have = -16, how_many_want = which_one, final_number = 0;
@@ -44,6 +54,13 @@ namespace PrimeNumbers
             //Console.ReadLine();
         }
 
+        /// <summary>
+        /// This validates that the num passed in is a prime number
+        /// Prime numbers are only divisible by 1 and themselves
+        /// This does some short cutting for performance. We avoid looping when we don't need to.
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns>true if prime number, otherwise false</returns>
         private static bool IsPrime(int num)
         {
             int c = 0, n = (num + 1) / 8;
