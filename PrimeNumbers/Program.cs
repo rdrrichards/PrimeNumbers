@@ -6,7 +6,24 @@ namespace PrimeNumbers
     {
         static void Main(string[] args)
         {
-            int num = 2, how_many_have = -16, how_many_want = 10001, final_number = 0;
+            int in_val = ParseArgs(args);
+            GetPrime(in_val > 0 ? in_val : 10001);
+        }
+
+        private static int ParseArgs(string[] args)
+        {
+            int arg1;
+            if (args.Length == 1)
+            {
+                if (int.TryParse(args[0], out arg1))
+                    return arg1;
+            }
+            return 0;
+        }
+
+        private static void GetPrime(int which_one)
+        {
+            int num = 2, how_many_have = -16, how_many_want = which_one, final_number = 0;
             //const bool DEBUG = false;
             DateTime start = DateTime.Now, end;
 
